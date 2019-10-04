@@ -1,0 +1,40 @@
+on a un git local comme sur notre machine 
+et ensuite on a un git distant qui est github 
+=> avec git init on va initialiser un git local et pour le partager au git distant je fait appel a la commande git add fichier1 app.java 
+ce qui est important il faut commenter nos fichier pour expliquer ce qu'on fait 
+git commit -m  'ajout de la classe app.java'
+
+pour envoyer le fichier on utilise:
+git push origin master, ainsi les autres développeurs peuvent avoir accés a mon code, s'il veulent télécharger les fichier envoyé par le premier dev on utilise git pull origin master
+
+
+
+=======================================================o=========================================
+
+						EXERCICE 1:
+
+avant chaque nouvelle version d'un projet on doit indiquer les fichier ayant subit des changements par rapport à la verison précédente.
+On initialise notre git avec git init ensuite:
+
+- 1st step => on choisit les fichiers a mettre dans le git (j'ai uniquement choisit le fichier PrimeCollection.java)
+
+- 2nd step => on va enregistrer les sources du projet avec git commit
+
+- 3rd step => on change la valeur de la borne  ( un changement dans le code )
+
+- remarque : en faisant git diff aprés la modification du code, celui ci m'affiche en vert les nouvelles modifications de mon fichier 
+
+- pour consulter les récentes modifications on utilise la commande git log 
+
+remarque: sha-1 mode de cryptage
+
+- on copie le hash de notre premier commit: 9e4657871a9cd0ee60040434a722d6a46af8c938  
+
+- pour determiner la différence apporté entre deux commit on prend leur hash et on utilise la commande git diffhash-commit-1 hash-commit-2
+ dans notre cas :
+  git diff 9e4657871a9cd0ee60040434a722d6a46af8c938 a1acd9cf06b670728823e399d8e286ccfc4f8524
+
+- le commit le plus récent est référencé par HEAD
+- voici un tuto interessant https://git-scm.com/docs/gittutorial
+
+====================================================================================================

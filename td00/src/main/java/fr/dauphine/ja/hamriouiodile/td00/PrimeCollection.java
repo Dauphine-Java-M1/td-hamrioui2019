@@ -13,7 +13,7 @@ public class PrimeCollection
         /*alt+shift+R m'affiche un script ou je peut renomer toutes els occurence de ma class pareil pour toto*/
         /*on renomme la classe en utilisant alt+shift+r sur app */
     	PrimeCollection pc=new PrimeCollection();
-    	pc.initRandom(1, 100);
+    	pc.initRandom(1000, 2000);
     	Iterator<Integer> iter=pc.numbers.iterator();
     	while(iter.hasNext()){
     		/*si je veux acceder a la valeur de mon iterateur j'utilise next()*/

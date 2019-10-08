@@ -38,3 +38,17 @@ remarque: sha-1 mode de cryptage
 - voici un tuto interessant https://git-scm.com/docs/gittutorial
 
 ====================================================================================================
+
+						EXERCICE 2
+
+une fois le compte github créé, on séléctionne notre nom et une fois toutes les autorisation accepté, on a un assignement https://github.com/Dauphine-Java-M1/td-hamrioui2019 qui correspond a a mon url de dépot
+- la commande git remote add origin <mon url du depot>, permet de connecter deux d ́epot git, celui qui est sur votre disque dur, et celui degit hub
+
+- Pour  envoyer  les  derniers  changements  de  votre  projet  dans  le dépot  Github on tappe la commande : git push origin master
+je tappe mon username et mon mdp et c'est fait (on a une synchronisation des deux dépots)
+
+====> on effectue plusieurs changement pour voir ce que ça donne 
+
+
+
+- question 5 exo 2

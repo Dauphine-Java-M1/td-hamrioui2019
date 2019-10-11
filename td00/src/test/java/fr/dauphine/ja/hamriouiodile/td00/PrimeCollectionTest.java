@@ -34,8 +34,42 @@ public class PrimeCollectionTest
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
+    public void testPrimeCollection()
     {
         assertTrue( true );
     }
-}
+    public void test0IsPrime() {
+    	assertTrue(isPrime(0));
+    }
+    
+    public void testTwoIsPrime() {
+    	assertTrue(isPrime(2));
+    }
+
+    public void test9IsNotPrime() {
+    	assertTrue(!isPrime(9));
+
+    }
+    private boolean isPrime(int p) {
+    	int i,test;
+    	test=0;
+    	if(p%2==0) {
+    		test=1;
+    	}
+    	else {
+    		for (i =3; i < p; i=i+2) {
+    			if(p%i==0) {
+    	    		test=1;
+    	    	}
+    		}
+    			if(test==0) {
+    				return true;
+    			}
+    			else {
+    				return false;
+    			}
+    	}
+		return true;
+    }
+   }
+    

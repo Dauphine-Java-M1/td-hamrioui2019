@@ -1,0 +1,65 @@
+
+
+
+==================================================TD1==============================================
+
+
+Pour ce td on cré un nouveau projet maven dans le repertoire javaavance
+pour cela on va rappeller brievement les étapes à suivre:
+	- on cré projet maven avec la commande : mvn archetype:generate -D archetypeArtifactId=maven-archetype-quickstart, on donne les propriétés du package et du groupeID comme dans le td00 sauf que ici on mets shapes au lieu de td00 
+	- on modifie ensuite le fichier pom.xml en ajoutant les propriétés de version et celles demandés dans le td00 
+	- on va créer une archive .jar avec la commande mvn package 
+	- on compile tout cela avec mvn compile et on commence
+	- on suit ensuite les étapes de al création de l'archive .jar et on importe le projet maven sur eclipse
+
+
+###########################################    Exo1:   ##############################################
+
+
+	1- on cré une classe Point avec deux champs privés x et y. 
+
+	 - les deux ligne fonctionne bien car ici on utilise le constructeur par défaut qui nous permet d'instancier l'objet point p et d'accéder au deux champs x et y et nous les affiche : 0 0 car il donne des valeur par défaut.
+
+	2- on cré une classe TestPoint on utilise le meme code que dans la classe Point, ici ça ne marche pas car on ne peux pas accéder au champs privés d'une autre classe directement avec p.x et p.y.
+	Pour y remedier on cré des methodes guetteur dans la classe Point qui vont récupérer la valeur et en faisant appel a ces guetteur on accede ainsi a la valeur comme ceci:
+			
+	<<<< System.out.println(p.getX()+" "+p.getY());   >>>
+
+	3- Pourquoi il faut toujours que les champs d’une classe soient privés? principe de l'encapsulation :) 
+
+	4- accesseur = getter, 
+	les accesseur sont des fonctions qui te permettent de récupérer la valeur d'une variable declarée "private" dans la meme classe.
+	Dans notre cas en utilisant la classe TestPoint oui on doit l'utiliser pour acceder aux champs privés de la classe Point
+
+	5- on cré un constructeur parametré par px et py, le probleme est quand on cré un constructeur parametré celui ci ecrase le constructeur par défaut donc on ne peut plus utiliser le constructeur par défaut. 
+
+	6- modification des parametre OK
+
+	7- Pour connaitre à tout moment le nombre de point créé, on déclare un compteur cpt qu'on initialise à 0 on va l'incrémenter à chaque fois qu'on appelle au constructeur, on va créer une méthode qui getNombreInstance() qui retourne le compteur. Il suffira d'appeller a cette fonction avec System.out.print(Point.getNombreInstance()); 
+    
+ 	8- 
+	public Point(Point a)
+	     {
+		x = a.x;
+		y = a.y;
+	     }
+	comment le compilateur sait quel constructeur utiliser?
+
+
+	9- -------
+
+
+###########################################    Exo2:   ##############################################
+
+	1- le code affiche : 
+		true
+		false
+	Alors p1==p2 car on a affecté l'objet cré p1 a l'objet p2 il considère que c'est le meme objet par contre p1==p3 est faux car il considére que p1 et p3 sont deux objets distincts malgrés les valeurs équivalentes des coordonnées    
+
+
+	2- isSameAS(Point a) 
+
+
+
+
+ REMARQUE :sur eclipse=> pour générer des getteur et setteur, il suffit d'aller source et generate

@@ -116,4 +116,55 @@ git add lechemindufichier
 		return false;
 	 }
 
+	4-
+	en passant, null en argument, cela génère une exception de type NullPointException 
+	si on met null en argument de add cela la taille du tab.
+	On va modifier la classe de tel sorte a utiliser une LinkedList au lieu d'un tableau
+	les fonctions ne servent plus a rien vu qu'il n y a plus de capacité 
+
+###########################################    EXO 4 ################################################
+
+
+	1-
+	on peut imaginer plusieur signature, elle va prendre en paramettre : un point, et les deux coordonnee de translation : 
+	static Point translate (Point a, int dx, int dy)
+	     {
+		Point p = new Point ();
+		p.x = a.x + dx;
+		p.y= a.y + dy;
+		return p;
+	     }
+
+	2-
+	creation de la classe cercle: cette classe définit un cercle ayant comme centre un point centre, et un rayon de type double
+
+	3-
+	public String toString() {
+		return "c est un cercle de centre "+this.centre.afficher()+" et de rayon "+this.rayon;
+	}
+	j'ai ajouter la méthode afficher() dans la classe point afin qu elle m affiche les coordonnées proprement.
+
+	4- 
+	methode translate: du cercle 
+	static Cercle translate (Cercle c, int dx, int dy)
+	    {
+	       Cercle c1 = new Cercle ();
+	       int x=c.centre.getX() + dx;
+	       int y=c.centre.getY() + dy;
+	       c1.centre.setX(x);
+	       c1.centre.setY(y);
+	       return c1;
+	    }
+	meme principe que pour le point. on va cependant modifier les coordonnées en utilisant les setteur de la classe point sur le centre le rayon ne change pas.
+
+	5-
+
+	le probleme est le nom de la classe ici c'est circle or nous avons définit notre classe sous le nom de cercle donc il faut bien respecter le nom de la classe.
+
+
+
+--------------------refaire cette partie et translate -------------------------
+	
+	
+
  REMARQUE :sur eclipse=> pour générer des getteur et setteur, il suffit d'aller source et generate

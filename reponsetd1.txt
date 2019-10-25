@@ -13,6 +13,12 @@ pour cela on va rappeller brievement les étapes à suivre:
 	- on suit ensuite les étapes de al création de l'archive .jar et on importe le projet maven sur eclipse
 
 
+au niveau de la transmission des fichiers sur github, on fait : 
+git push origin master 
+git pull origin master 
+git add lechemindufichier
+
+
 ###########################################    Exo1:   ##############################################
 
 
@@ -43,10 +49,10 @@ pour cela on va rappeller brievement les étapes à suivre:
 		x = a.x;
 		y = a.y;
 	     }
-	comment le compilateur sait quel constructeur utiliser?
+	comment le compilateur sait quel constructeur utiliser? il va tout simplement voir le type des parametre : si c'est un point il va utiliser le constructeur avec point comme parametre si on lui donne deux valeurs il utilisera le premier avec comme parametre x et y 
 
 
-	9- -------
+	9- il suffit de faire: System.out.println("("+p.x+","+p.y+")");
 
 
 ###########################################    Exo2:   ##############################################
@@ -54,12 +60,60 @@ pour cela on va rappeller brievement les étapes à suivre:
 	1- le code affiche : 
 		true
 		false
-	Alors p1==p2 car on a affecté l'objet cré p1 a l'objet p2 il considère que c'est le meme objet par contre p1==p3 est faux car il considére que p1 et p3 sont deux objets distincts malgrés les valeurs équivalentes des coordonnées    
+	Alors p1==p2 car on a affecté l'objet créé p1 a l'objet p2 il considère que c'est le meme objet par contre p1==p3 est faux car il considére que p1 et p3 sont deux objets distincts malgrés les valeurs équivalentes des coordonnées    
 
 
-	2- isSameAS(Point a) 
+	2- 
+	public static boolean isSameAs(Point a, Point b) {
+		return a.equals(b);
+	}
+
+	3- en premier il faut bien pressicer le type que prend la arraylist en l'occurence Point 
+	   IndexOf elle prend l'element à rechercher dans la liste, elle affiche 0 si l'element est dans la list, -1 sinon ici on n'a pas encore ajouté p3 donc c'est normal qu'il nous affiche -1
+
+	-------modifier la classe Point pour résoudre le probleme: il suffit d'ajouter p3 dans la liste
 
 
+###########################################    EXO 3 ################################################
 
+	1- 
+	on va construire un Constructeur de la classe prenant 2 param un tableau de point et la taille de celui ci:
+	2- 
+	implémenter la méthode add qui ajoute un point à la ligne brisée. 
+	private void add(Point a) {
+		 /*on récupére la taille du tableau afin d'ajouter le point a la fin */
+		 int taille = ligneBrisee.length;
+		 ligneBrisee[taille]=a;// on l'ajoute à la fin du tab 
+	}
+
+	si on ajoute pas de condition cela nous affiche une erreur:  Index  out of bounds for length
+
+	on doit donc tester si on n'a pas atteint la limite.
+	donc on ajoute un attribut taille(qui est le nbr de point de la ligne) qu'on initialise à 0 dans le constructeur. a chaque appelle de ADD on l incrémente et on test si cette taille n'est pas > au max fixé qui est n 
+
+ voici ce que ça donne : 
+		 /*methode qui ajoute un  point dans une ligne */
+	 private void add(Point a) {
+		 taille= taille+1;
+		 if(taille <= n) {
+			 ligneBrisee[taille]=a;
+			 System.out.println("Vous avez reussi à ajouter ");
+			
+		 }
+		 else {
+			 System.out.println("VOSU AVEZ DEPASSER LA TAILLE ");
+		 }	 
+	 }
+ 	 
+	3- 
+	la fonction contains : 
+	private boolean contains(Point a) {
+		 for (Point point : ligneBrisee) {
+			if(point.equals(a)) {
+				return true;
+			}
+		}
+		return false;
+	 }
 
  REMARQUE :sur eclipse=> pour générer des getteur et setteur, il suffit d'aller source et generate

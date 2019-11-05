@@ -126,14 +126,11 @@ git add lechemindufichier
 
 
 	1-
-	on peut imaginer plusieur signature, elle va prendre en paramettre : un point, et les deux coordonnee de translation : 
-	static Point translate (Point a, int dx, int dy)
-	     {
-		Point p = new Point ();
-		p.x = a.x + dx;
-		p.y= a.y + dy;
-		return p;
-	     }
+	on peut imaginer plusieur signature, elle va prendre en paramettre : les deux coordonnee de translation : 
+	public Point translate (int dx, int dy)
+     {
+		return new Point (this.x + dx,this.y + dy);
+     }
 
 	2-
 	creation de la classe cercle: cette classe définit un cercle ayant comme centre un point centre, et un rayon de type double
@@ -146,21 +143,36 @@ git add lechemindufichier
 
 	4- 
 	methode translate: du cercle 
-	static Cercle translate (Cercle c, int dx, int dy)
-	    {
-	       Cercle c1 = new Cercle ();
-	       int x=c.centre.getX() + dx;
-	       int y=c.centre.getY() + dy;
-	       c1.centre.setX(x);
-	       c1.centre.setY(y);
-	       return c1;
-	    }
+		public Circle translate (int dx, int dy)
+    {
+       int x=this.centre.getX() + dx;
+       int y=this.centre.getY() + dy;
+       this.centre.setX(x);
+       this.centre.setY(y);
+       return this;
+    }
 	meme principe que pour le point. on va cependant modifier les coordonnées en utilisant les setteur de la classe point sur le centre le rayon ne change pas.
 
-	5-
+	6-
+	il suffit d'enlever getCenter
+	
+	7-
+	on renvoie tout simplement, la surface du cercle en utilisant la formule mathématique pi*r*r
 
-	le probleme est le nom de la classe ici c'est circle or nous avons définit notre classe sous le nom de cercle donc il faut bien respecter le nom de la classe.
+	8-
+	contains(Point p), ici on va chercher si le point appartient au cercle
+	je vais calculer la distance des coordonnées par rapport au centre puis j'utilise la distance euclédienne
 
+	9-
+	contains(Point p, Circle...circles)
+
+	=========================================exo5============================================
+	4-
+	erreur de compilation, on doit redéfinir la methode toString,
+ainsi:
+ public String toString() {
+	return "c est un anneau de centre "+this.centre.afficher()+" de rayon "+this.rayon+" et de rayon interne : "+this.rayonInt;
+		}
 
 
 --------------------refaire cette partie et translate -------------------------

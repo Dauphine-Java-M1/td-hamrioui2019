@@ -1,0 +1,14 @@
+
+
+On cré un nouveau projet Maven sous le nom de iterables; avec un groupe id : fr.dauphine.ja.hamriouiodile.iterables
+
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ EXO 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+1- 
+
+la classe panel implémente iterator, donc pour cela on doit aussi implémenter hasNext() et next().
+
+il faut aussi créer un constructeur qui initialise la valeur courante au début du panel.
+ ensuite il suffit de renvoyer un panel dans la fonction panel1  
+

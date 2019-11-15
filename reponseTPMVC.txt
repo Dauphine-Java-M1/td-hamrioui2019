@@ -1,0 +1,14 @@
+						Odile HAMRIOUI
+
+
+
+
+###########################################  MVC  ################################################## 
+
+apres avoir ajouté plusieurs modification sur le code, notemment sur Ring et cercle, et ce avec l'aide de mes camarade et du professeur afin d'avancer dans le tp, je me lance dans le model MVC
+
+En suivant l'architecture donnée par la professeur de TD, Vous trouverez ci joint le schéma relatif l'architecture décidée pour ce probleme. 
+
+
+
+
